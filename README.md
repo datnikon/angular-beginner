@@ -16,11 +16,11 @@
 # Angular Component
 - Two-way binding: gives your app a way to share data between a component class and its template. (Use [], NgModel)
 - Component life-cycle hooks: A component instance has a lifecycle that starts when Angular instantiates the component class and renders the component view along with its child views. The lifecycle continues with change detection, as Angular checks to see when data-bound properties change, and updates both the view and the component instance as needed. The lifecycle ends when Angular destroys the component instance and removes its rendered template from the DOM. 
-Ex: ngOnInit, ngOnChanges, ngOnDestroy...
+<br>Ex: ngOnInit, ngOnChanges, ngOnDestroy...
 - Interpolation and template expressions: Interpolation allows you to incorporate calculated strings into the text between HTML element tags and within attribute assignments. Template expressions are what you use to calculate those strings.
-Ex: {{a}}, {{number +1}}
+<br>Ex: {{a}}, {{number +1}}
 - Event binding: allows you to listen for certain events such as keystrokes, mouse movements, clicks, and touches.
-Ex: (click), (keyup), …
+<br>Ex: (click), (keyup), …
 - Input and Output: allow Angular to share data between the parent context and child directives or components. 
 # Observable vs Promise
 | Observabler  | Promise |
