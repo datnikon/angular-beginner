@@ -1,0 +1,13 @@
+<div>
+    <input type="number" [(ngModel)]="count" placeholder="Enter number">
+    <button (click)="createList()">Start</button>
+    <strong *ngIf="listItem && !isWin">You need find number: {{currentNumber}}</strong>
+    <strong *ngIf="listItem && isWin">You Win</strong>
+    <div *ngIf="listItem">
+        <tr>
+            <td *ngFor="let item of listItem" (click)="process(item)" [ngClass]="{ 'valid': item.isSelected}" appGameItem>
+                {{item.value}}
+            </td>
+        </tr>
+    </div>
+</div>

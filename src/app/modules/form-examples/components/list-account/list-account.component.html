@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Pass</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let item of list">
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.password}}</td>
+        <td><label (click)="onEdit(item)">Edit</label></td>
+
+    </tr>
+</table>

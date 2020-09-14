@@ -1,0 +1,44 @@
+
+div{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 30%;
+    margin: auto;
+    input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 5px;
+         :focus {
+            border: 1px solid yellow;
+        }
+        
+    }
+    button{
+        margin: 10px 10px 20px 0px;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            text-transform: capitalize;
+
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        tr {
+            label {
+                cursor: pointer;
+            }
+        }
+    }
+    h3{
+        width: 100%;
+    }
+}

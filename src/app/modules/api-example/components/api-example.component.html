@@ -1,0 +1,19 @@
+<div>
+    <input type="text" #place placeholder="Enter city name to get weather information  (Ex: Ha Noi, LonDon, Da Nang)">
+    <button (click)="getWeather(place.value)">Get Weather (Observable)</button>
+    <button (click)="getWeatherWithPromise(place.value)">Get Weather (Promise)</button>
+
+    <h3>Weather Information</h3>
+    <table>
+        <tr>
+            <th>Main</th>
+            <th>Description</th>
+            <th>Wind Spred</th>
+        </tr>
+        <tr>
+            <td>{{data?.weather[0].main}}</td>
+            <td>{{data?.weather[0].description}}</td>
+            <td>{{data?.wind.speed}}</td>
+        </tr>
+    </table>
+</div>

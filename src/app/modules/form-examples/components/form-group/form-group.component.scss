@@ -1,0 +1,27 @@
+div {
+    display: flex;
+    justify-content: center;
+    form {
+        max-width: 30%;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 40px;
+        margin-right: 20px;
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+             :focus {
+                border: 3px solid #555;
+            }
+        }
+        .err {
+            color: red;
+            display: flex;
+        }
+        button {
+            margin-right: 10px;
+        }
+    }
+}

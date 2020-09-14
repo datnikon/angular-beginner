@@ -1,0 +1,51 @@
+<div>
+
+    <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
+        <h2>{{title}}</h2>
+        <label>Full Name</label>
+        <input type="text" formControlName="name">
+        <label *ngIf="employeeForm.get('name').touched && employeeForm.get('name').errors?.required" class="err">
+            This is a required field
+        </label>
+        <label *ngIf="!employeeForm.get('name').errors?.required && employeeForm.hasError('nameNotAllow')" class="err">
+            This name is not allow
+        </label>
+        <label>Email</label>
+        <input type="text" formControlName="email">
+        <ng-container *ngIf="employeeForm.get('email').touched">
+            <label *ngIf="employeeForm.get('email').errors?.required" class="err">
+                This is a required field
+            </label>
+            <label *ngIf="employeeForm.get('email').errors?.email" class="err">
+                Invalid Email
+            </label>
+        </ng-container>
+        <label>Password</label>
+        <input type="text" formControlName="password">
+        <ng-container *ngIf="employeeForm.get('password').touched">
+            <label *ngIf="employeeForm.get('password').errors?.required" class="err">
+                This is a required field
+            </label>
+            <label *ngIf="employeeForm.get('password').errors?.minlength" class="err">
+                Short Password
+            </label>
+            <label *ngIf="!employeeForm.get('password').errors?.minlength && (employeeForm.get('password').errors?.pattern)" class="err">
+                Password not good
+            </label>
+        </ng-container>
+        <label>Confirm Password</label>
+        <input type="text" formControlName="confirmPassword">
+        <ng-container *ngIf="employeeForm.get('confirmPassword').touched">
+            <label *ngIf="!employeeForm.get('confirmPassword').errors?.minlength && (employeeForm.hasError('passwordnotmatch'))" class="err">
+                Password not match
+            </label>
+        </ng-container>
+        <button type="submit" [disabled]="!employeeForm.valid" (click)="add()">
+            {{acction}}
+        </button>
+        <button (click)="reset()">
+            Reset
+        </button>
+    </form>
+    <list-account *ngIf="list && list.length > 0" (event)="setUpEdit($event)" [list]="list"></list-account>
+</div>
