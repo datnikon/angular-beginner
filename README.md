@@ -33,7 +33,7 @@
 <br>Ex: (click), (keyup), …
 - Input and Output: allow Angular to share data between the parent context and child directives or components. 
 ## Observable vs Promise
-| Observabler  | Promise |
+| Observable  | Promise |
 | ------------- | ------------- |
 | Emit multiple values over a period of time.  | 	Emit a single value at a time.  |
 | Are lazy  | Are not lazy |
