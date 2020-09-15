@@ -8,6 +8,7 @@ import { ApiExampleService } from '../api-example.service';
 })
 export class ApiExampleComponent implements OnInit {
   data: any
+  urlIcon:string
   constructor(private apiService: ApiExampleService) { }
 
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class ApiExampleComponent implements OnInit {
     this.apiService.getWeather(place).subscribe(data =>{
       if(data && data.cod != 404){
         this.data = data;
+        this.urlIcon = "http://openweathermap.org/img/w/" + this.data.weather[0].icon + ".png";
       }
     })
   }
@@ -28,6 +30,7 @@ export class ApiExampleComponent implements OnInit {
     this.data = null
     this.apiService.getWeatherWithPromise(place).then(response =>{
       this.data = response;
+      this.urlIcon = "http://openweathermap.org/img/w/" + this.data.weather[0].icon + ".png";
     }).catch(err =>{
       alert("Err: "+ err.message)
     })

@@ -6,11 +6,13 @@
     <h3>Weather Information</h3>
     <table>
         <tr>
+            <th>Icon</th>
             <th>Main</th>
             <th>Description</th>
             <th>Wind Spred</th>
         </tr>
         <tr>
+            <td><img [src] = "urlIcon" alt="icon"></td>
             <td>{{data?.weather[0].main}}</td>
             <td>{{data?.weather[0].description}}</td>
             <td>{{data?.wind.speed}}</td>
