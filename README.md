@@ -36,7 +36,7 @@
 | Observabler  | Promise |
 | ------------- | ------------- |
 | Emit multiple values over a period of time.  | 	Emit a single value at a time.  |
-| Are lazy  | Are not lazy: execute immediately after creation.  |
+| Are lazy  | Are not lazy |
 | Cancellable   | 	Not cancellable   |
 | Provide the map for forEach, filter, reduce, retry, and retryWhen operators.  | Don’t provide any operations.  |
 ## Angular FormGroup, FormControl, Validator, Async validator
