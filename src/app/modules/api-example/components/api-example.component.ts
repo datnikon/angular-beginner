@@ -16,7 +16,7 @@ export class ApiExampleComponent implements OnInit {
   }
 
   getWeather(place:string){
-    this.data = null
+    this.resetData();
     this.apiService.getWeather(place).subscribe(data =>{
       if(data && data.cod != 404){
         this.data = data;
@@ -27,12 +27,18 @@ export class ApiExampleComponent implements OnInit {
 
 
   getWeatherWithPromise(place:string){
-    this.data = null
+    this.resetData();
     this.apiService.getWeatherWithPromise(place).then(response =>{
       this.data = response;
       this.urlIcon = "http://openweathermap.org/img/w/" + this.data.weather[0].icon + ".png";
     }).catch(err =>{
       alert("Err: "+ err.message)
     })
+  }
+
+
+  resetData(){
+    this.data = null;
+    this.urlIcon = null;
   }
 }
